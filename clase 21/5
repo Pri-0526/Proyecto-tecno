@@ -22,13 +22,3 @@ while noAdivinado:
     if numeroIngresado == numero_secreto:
         print ("Felicidades. Has adivinado el número.")
         noAdivinado = False
-
-if True:
-    print("
-booleano=True
-while booleano: 
-    print ("ingrese un numero")
-    variable=int(input("ingrese un numero"))
-    numero
-    print (, end= ",")
-    booleano=numero== 9
