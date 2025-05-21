@@ -1,0 +1,34 @@
+"Crea un programa que siga pidiendo numeros entre el 1 y el 100 hasta que adivines el numero.Como pista tiene que decir que el numero que ingresaste es mayor o menor al que tienen que adivinar."
+
+import random
+
+numero_secreto = random.randint (1, 100)
+noAdivinado = True
+    
+def rangoCorrecto (num):
+    minimo=1
+    maximo=100
+    return minimo>num or num>maximo
+
+while noAdivinado:
+    numeroIngresado = int (input ("Adivinaste el numero (entre 1 y 100):"))
+    if rangoCorrecto (numeroIngresado):
+        print ("Por favor, ingrese un numero entre 1 y 100.")
+        continue
+    if numeroIngresado < numero_secreto:
+        print ("El numeor es mayor.")
+    if numeroIngresado > numero_secreto:
+        print ("El numero es menor.")
+    if numeroIngresado == numero_secreto:
+        print ("Felicidades. Has adivinado el número.")
+        noAdivinado = False
+
+if True:
+    print("
+booleano=True
+while booleano: 
+    print ("ingrese un numero")
+    variable=int(input("ingrese un numero"))
+    numero
+    print (, end= ",")
+    booleano=numero== 9
