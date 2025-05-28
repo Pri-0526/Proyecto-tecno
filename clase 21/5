@@ -22,3 +22,4 @@ while noAdivinado:
     if numeroIngresado == numero_secreto:
         print ("Felicidades. Has adivinado el número.")
         noAdivinado = False
+
