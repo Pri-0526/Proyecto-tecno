@@ -32,3 +32,4 @@ hijo.hablar ()
 hija = Hija("nombre del hija" , "nombre de banda")
 hija.hablar ()
 
+#Crea una clase `Empleado` con atributos `nombre` y `salario`. Luego, define una subclase `Gerente` que herede de `Empleado` y añada un atributo `departamento`. Implementa un método `mostrar_informacion()` en ambas clases.
