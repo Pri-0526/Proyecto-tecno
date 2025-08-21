@@ -1,0 +1,90 @@
+class Persona:
+    def __init__(self,nombre):
+        self.nombre=nombre
+class Alumno(Persona):
+    def __init__(self,nombre):
+        super().__init__(nombre)
+class Profesor(Persona):
+    def __init__(self,nombre):
+        super().__init__(nombre)
+class Clase:
+    def __init__(self,materia,grado,division,profesor):
+        self.materia=materia
+        self.grado=grado
+        self.division=division
+        self.alumnos=[]
+        self.profesor=profesor
+    def agregar_alumno(self,nombre):
+        alumno=Alumno(nombre)
+        self.alumnos.append(alumno)
+    def llenar_clase(self,nombres_de_alumnos):
+        for nombre in nombres_de_alumnos:
+            alumno=Alumno(nombre)
+            self.agregar_alumno(alumno)
+gabriel=Profesor("Gabriel")
+nombres_de_alumno=["Mariana","Anghely","Dania","Belen","Juana","Rocio","Maximo","Nicole","Aaron","Rodrigo"]
+tic5to1ra = Clase("TIC",5,1,gabriel)
+tic5to1ra.llenar_clase(nombres_de_alumno)
+
+#Ejercicio: Hacer una clase llamada Club que tenga nombre, división, país en el que juega la 
+# liga, un director técnico y una lista de por lo menos 11 jugadores. Luego crear una clase 
+# llamada Jugador que tenga nombre, apellido, nacionalidad, numero de dorsal y posición en la que
+# juega. La clase director técnico hereda de la misma clase Persona que la clase Jugador y tiene
+# solo nombre, apellido y nacionalidad.
+
+class Persona:
+    def __init__(self, nombre, apellido, nacionalidad):
+        self.nombre = nombre
+        self.apellido = apellido
+        self.nacionalidad = nacionalidad
+
+class Jugador(Persona):
+    def __init__(self, nombre, apellido, nacionalidad, dorsal, posicion):
+        super().__init__(nombre, apellido, nacionalidad)
+        self.dorsal = dorsal
+        self.posicion = posicion
+
+class DirectorTecnico(Persona):
+    def __init__(self, nombre, apellido, nacionalidad):
+        super().__init__(nombre, apellido, nacionalidad)
+
+class Club:
+    def __init__(self, nombre, division, pais, director_tecnico):
+        self.nombre = nombre
+        self.division = division
+        self.pais = pais
+        self.director_tecnico = director_tecnico
+        self.jugadores = []
+
+    def agregar_jugador(self, jugador):
+        self.jugadores.append(jugador)
+
+    def mostrar_info(self):
+        print(f"Club: {self.nombre} ({self.division}) - {self.pais}")
+        print(f"DT: {self.director_tecnico.nombre} {self.director_tecnico.apellido} ({self.director_tecnico.nacionalidad})")
+        print("\nJugadores:")
+        for j in self.jugadores:
+            print(f"{j.dorsal} - {j.nombre} {j.apellido} ({j.posicion}) - {j.nacionalidad}")
+
+dt = DirectorTecnico("Marcelo", "Gallardo", "Argentina")
+
+river = Club("River Plate", "Primera División", "Argentina", dt)
+
+jugadores = [
+    Jugador("Franco", "Armani", "Argentina", 1, "Arquero"),
+    Jugador("Milton", "Casco", "Argentina", 20, "Defensor"),
+    Jugador("Paulo", "Díaz", "Chile", 17, "Defensor"),
+    Jugador("Enzo", "Díaz", "Argentina", 13, "Defensor"),
+    Jugador("Leandro", "González Pirez", "Argentina", 14, "Defensor"),
+    Jugador("Enzo", "Pérez", "Argentina", 24, "Mediocampista"),
+    Jugador("Rodrigo", "Aliendro", "Argentina", 29, "Mediocampista"),
+    Jugador("Nicolás", "De la Cruz", "Uruguay", 11, "Mediocampista"),
+    Jugador("Ignacio", "Fernández", "Argentina", 10, "Mediocampista"),
+    Jugador("Lucas", "Beltrán", "Argentina", 18, "Delantero"),
+    Jugador("Pablo", "Solari", "Argentina", 36, "Delantero")
+]
+
+for j in jugadores:
+    river.agregar_jugador(j)
+
+river.mostrar_info()
